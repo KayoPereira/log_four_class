@@ -1,0 +1,11 @@
+<%= simple_form_for @lesson do |f| %>
+  <div class="form-group">
+    <%= f.input :discipline, label: 'Disciplina' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :lesson_day, as: :date, label: 'Dia da aula' %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, 'Criar ata', class: 'btn btn-primary' %>
+  </div>
+<% end %>
