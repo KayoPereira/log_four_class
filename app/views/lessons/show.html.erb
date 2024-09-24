@@ -1,1 +1,12 @@
-<h1>Show das lessons</h1>
+<h1>Lista de presença: <%= @lesson.discipline %></h1>
+<h2>Data da ata: <%= @lesson.lesson_day.strftime('%m/%d/%Y') %>
+
+<%= link_to "Marcar presença na aula", attendances_path(lesson_id: params[:id], user_id: current_user), method: :post, data: { turbo_method: :post } %>
+
+<h3>Lista de alunos: </h3>
+
+<ol>
+	<% @attendances.each do |attendence| %>
+		<li><%= attendence.user.email %></li>
+	<% end %>
+</ol>
